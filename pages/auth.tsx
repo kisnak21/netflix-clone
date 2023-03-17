@@ -6,8 +6,12 @@ import { useCallback, useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
+import { FcGoogle } from 'react-icons/fc'
+import { FaGithub } from 'react-icons/fa'
+
 const Auth = () => {
   const router = useRouter()
+
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
@@ -88,6 +92,20 @@ const Auth = () => {
             >
               {variant === 'login' ? 'Login' : 'Sign up'}
             </button>
+            <div
+              onClick={() => signIn('google', { callbackUrl: '/' })}
+              className='mt-8 flex flex-row items-center justify-center gap-4'
+            >
+              <div className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white transition hover:opacity-80'>
+                <FcGoogle size={30} />
+              </div>
+              <div
+                onClick={() => signIn('github', { callbackUrl: '/' })}
+                className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white transition hover:opacity-80'
+              >
+                <FaGithub size={30} />
+              </div>
+            </div>
             <p className='mt-12 text-neutral-500'>
               {variant === 'login'
                 ? 'First time using Netflix?'

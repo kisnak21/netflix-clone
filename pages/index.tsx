@@ -3,6 +3,7 @@ import { getSession } from 'next-auth/react'
 import { NextPageContext } from 'next'
 import useCurrentUser from '@/hooks/useCurrentUser'
 import Navbar from '@/components/navbar'
+import Billboard from '@/components/billboard'
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context)
@@ -31,6 +32,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Navbar />
+      <Billboard />
     </>
   )
 }

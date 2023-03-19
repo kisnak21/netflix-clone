@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
 interface NavbarItemProps {
-  label: string
+  label: string;
 }
 
 const Navbaritem: React.FC<NavbarItemProps> = ({ label }) => {
   return (
-    <div className='cursor-pointer text-white transition hover:text-gray-300'>
+    <div className="cursor-pointer text-white transition hover:text-gray-300">
       {label}
     </div>
-  )
-}
+  );
+};
 
-export default Navbaritem
+export default Navbaritem;

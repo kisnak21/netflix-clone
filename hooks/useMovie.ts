@@ -1,5 +1,5 @@
-import useSwr from 'swr'
-import fetcher from '@/lib/fetcher'
+import useSwr from "swr";
+import fetcher from "@/lib/fetcher";
 
 const useMovie = (id?: string) => {
   const { data, error, isLoading } = useSwr(
@@ -10,12 +10,12 @@ const useMovie = (id?: string) => {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
     }
-  )
+  );
   return {
     data,
     error,
     isLoading,
-  }
-}
+  };
+};
 
-export default useMovie
+export default useMovie;
